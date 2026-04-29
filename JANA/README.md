@@ -13,7 +13,13 @@ npm run dev
 ## URLs
 
 - GitHub repo: `https://github.com/sindhu1411/notebookgenerator`
-- Site URL: `https://your-deployment-url.vercel.app`
-- Notebook tutorial: `https://your-deployment-url.vercel.app/tutorial`
+- Site URL: `https://sindhu1411.github.io/notebookgenerator`
+- Notebook tutorial: `https://sindhu1411.github.io/notebookgenerator/tutorial`
 
-Update `NEXT_PUBLIC_SITE_URL` before deployment so the URL panels show the final site address.
+For GitHub Pages builds, use:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://sindhu1411.github.io/notebookgenerator \
+NEXT_PUBLIC_BASE_PATH=/notebookgenerator \
+npm run build
+```
