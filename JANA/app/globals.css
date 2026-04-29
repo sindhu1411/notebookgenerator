@@ -178,6 +178,7 @@ select {
 }
 
 .url-panel,
+.dataset-switcher,
 .section-grid,
 .callout,
 .notebook-shell,
@@ -199,6 +200,55 @@ select {
   margin-top: 8px;
   color: var(--teal);
   overflow-wrap: anywhere;
+}
+
+.switch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.switch-card {
+  background: var(--panel-strong);
+  border: 1px solid rgba(29, 41, 57, 0.08);
+  border-radius: 24px;
+  padding: 18px;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.switch-card span {
+  display: block;
+  color: var(--rust);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.switch-card strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.2rem;
+}
+
+.switch-card p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.switch-card.active {
+  border-color: rgba(31, 107, 103, 0.35);
+  box-shadow: inset 0 0 0 1px rgba(31, 107, 103, 0.12);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(238, 247, 246, 0.92));
+}
+
+.switch-card:hover {
+  transform: translateY(-2px);
 }
 
 .timeline {

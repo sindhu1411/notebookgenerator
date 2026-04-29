@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "NB Heart Disease",
+  title: "Notebook Data Studio",
   description:
-    "A Next.js notebook-style web app for cleaning and visualizing the Kaggle heart disease dataset.",
+    "A Next.js notebook-style web app for switching between heart disease and fake job cleaning demos.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
