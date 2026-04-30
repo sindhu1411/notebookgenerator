@@ -2,7 +2,7 @@ import { datasetHref, type DatasetKey } from "@/lib/datasets";
 
 export const REPO_URL = "https://github.com/sindhu1411/notebookgenerator";
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://sindhu1411.github.io/notebookgenerator";
+  process.env.NEXT_PUBLIC_SITE_URL || "http://172.20.122.71:8680";
 
 export function urlLinks(activeDataset: DatasetKey) {
   const tutorialHref = datasetHref("/tutorial", activeDataset);

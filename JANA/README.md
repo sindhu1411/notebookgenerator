@@ -1,6 +1,6 @@
-# NB Heart Disease
+# Notebook Data Studio
 
-Next.js web app for cleaning and visualizing the Kaggle heart disease dataset with an in-app notebook tutorial and static deployment support.
+Next.js web app for switching between heart disease and fake-job notebook demos, with static export support and a VM/PM2 deployment path.
 
 ## Local run
 
@@ -18,8 +18,10 @@ npm run dev
 ## URLs
 
 - GitHub repo: `https://github.com/sindhu1411/notebookgenerator`
-- Site URL: `https://sindhu1411.github.io/notebookgenerator`
-- NB Heart Disease: `https://sindhu1411.github.io/notebookgenerator/tutorial`
+- VM Site URL: `http://172.20.122.71:8680`
+- Heart tutorial: `http://172.20.122.71:8680/tutorial`
+- Fake job site: `http://172.20.122.71:8680/?dataset=fake-job`
+- Fake job tutorial: `http://172.20.122.71:8680/tutorial?dataset=fake-job`
 
 ## Deployment
 
@@ -34,8 +36,19 @@ npm run build
 For a VM or cloud server with PM2:
 
 ```bash
+NEXT_PUBLIC_SITE_URL=http://172.20.122.71:8680 npm run build
+npm install -g pm2
+pm2 start ecosystem.config.cjs
+pm2 save
+pm2 startup
+```
+
+Manual PM2 alternative:
+
+```bash
 npm run build
-pm2 start npm --name nb-heart-disease -- start
+PORT=8680 HOSTNAME=0.0.0.0 NEXT_PUBLIC_SITE_URL=http://172.20.122.71:8680 \
+pm2 start npm --name notebook-data-studio -- start
 ```
 
 For Vercel:
